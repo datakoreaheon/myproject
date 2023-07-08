@@ -2,8 +2,8 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import seaborn as sns 
-
-st.title('2%(?) 건방진 영화 추천 시스템')
+#--------------------------- 영화 추천 시스템 -----------------
+st.title('2%(?) 모자란 영화 추천 시스템')
 df_tab,df2_tab,df3_tab=st.tabs(['popular movies','recommand system','power reviewer'])
 with df_tab:
     st.subheader('영화 명작 순위(출처 : imdb)')
@@ -17,6 +17,7 @@ with df_tab:
         a=df.sort_values(by=group_by_option,ascending=False)
         ranking=st.slider('몇위까지 확인하고 싶으신가요?',1,250,1)
         st.dataframe(a.head(ranking))
+# -----------------------아이디 입력창------------------------------------------------------------------
 with df2_tab:
     st.subheader('당신이 좋아할만한 영화를 추천해드릴 수 있습니다!')
     st.caption('단 리뷰를 안 남겼으면 추천해드릴 수 없어요 ㅜㅜ')
